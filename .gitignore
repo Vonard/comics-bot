@@ -1,0 +1,8 @@
+.env
+.venv
+.idea/
+.cache/
+.local/
+.pythonlibs/
+.upm/
+__pycache__/
