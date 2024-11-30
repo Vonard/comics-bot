@@ -1,11 +1,10 @@
 import requests
 
 
-def download_image(url, filename, api_key=""):
-    payload = {"api_key": api_key}
-    response = requests.get(url, params=payload)
+def download_image(url, filename):
+    response = requests.get(url)
     response.raise_for_status()
-    with open(f"{filename}", 'wb') as file:
+    with open(filename, 'wb') as file:
         file.write(response.content)
 
 
