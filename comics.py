@@ -17,7 +17,7 @@ def download_comic(comic_number):
     download_image(comic["img"], f"{comic_number}.png")
 
 
-def check_comics():
+def get_latest_comic_number():
     url = "https://xkcd.com/info.0.json"
     response = requests.get(url)
     response.raise_for_status()

@@ -2,14 +2,14 @@ import telegram
 import os
 import random
 from dotenv import load_dotenv
-from comics import download_comic, check_comics
+from comics import download_comic, get_latest_comic_number
 
 
 def main():
     load_dotenv()
     bot = telegram.Bot(token=os.environ['TELEGRAM_BOT_TOKEN'])
     chat_id = os.environ['TG_CHAT_ID']
-    random_comic = random.randint(1, check_comics())
+    random_comic = random.randint(1, get_latest_comic_number())
     download_comic(random_comic)
     try:
         with open(f'{random_comic}.png', 'rb') as file:
